@@ -1,0 +1,224 @@
+#navUl{
+    margin-bottom: -35px;
+}
+#navUl li{
+    padding: 0px 10px;
+}
+.stickyNav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {  
+    width: 100%;  
+    background-image: url('../Assets/Image/etagere-de-livres-anciens.jpg');
+    font-family: 'Dancing Script', cursive;
+}
+/*Header*/
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 150px;
+    color: whitesmoke;
+}
+/*Nav*/
+nav {
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    margin: 5px 20px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(167, 167, 24);
+    border-radius: 15px;
+}
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+nav li:hover {
+    background-color: black;
+    text-decoration: none;
+    border-radius: 15px;
+}
+/*Main index*/
+.main-index {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+/*Main body */
+
+/*Main menu*/
+.main-menu {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    padding: 75px;
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+}
+.menu-body {
+    width: 70%;
+    margin: 0 auto;;
+    box-shadow: 0px 0px 42px 21px rgba(0,0,0,0.75);
+    height: 300px;
+}
+.main-menu p{
+color: white;
+font-size: 30px;
+font-weight: bold;
+background-color: #333;
+border-radius: 10px;
+width: fit-content;
+margin: 20px auto;
+padding: 5px;
+}
+.menu-body img {
+    height: 300px;
+    float: left;
+}
+/*Footer*/
+footer {
+    background-color: #333333;
+}
+footer li{
+    list-style: none;
+}
+.img {
+    margin-left: 100px;
+    margin-top: 25px;
+}
+.footer-adress {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 25px;
+}
+@media (max-width: 768px){
+    .nav_background{
+        background-color: rgb(0,0,0, 0.5);
+        border-radius: 15px; 
+    } 
+    #navUl{
+    margin-bottom: 0px;
+    }
+    .footer-adress{
+        font-size: 0.7em;
+    }
+    header h1{
+        font-size: 100px;
+    }
+} 
+/*Main Romans*/
+.main-romans {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.booklist {
+    margin: 50px auto;
+}
+.booktext {
+    margin: 60px auto;
+}
+h4 {
+    margin-top: 150px;
+    text-decoration: underline;
+}
+.comments{
+    text-align: center;
+}
+.postDate{
+    margin-left: 500px;
+    text-decoration: underline;
+    font-size: 17px;
+}
+/*Main Société*/
+.main-society {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+h2 {
+    text-decoration: underline;
+}
+.booklist {
+    margin: 40px auto;
+}
+.booktext {
+    margin: 60px auto;
+}
+/*Main Sports*/
+.main-sports {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.booklist {
+    margin: 50px auto;
+}
+.booktext {
+    margin: 60px auto;
+}
+/*Main Histoire*/
+.main-history {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.booklist {
+    margin: 50px auto;
+}
+.booktext {
+    margin: 60px auto;
+}
+.bookpage {
+    margin-bottom: 30px;
+}
+/* Main-inscription */
+.main-inscription {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.ti{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.bu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
