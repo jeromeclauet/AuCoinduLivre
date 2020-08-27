@@ -23,7 +23,7 @@
                 Les premières pages de ce livre sont émises par le GRAND basketteur Français (Saint-Quentinois d’origine pour les gens du Nord 😊) et deux fois meilleur défenseur de l’année NBA (pour le moment). ((Picard et fan de basket que je suis, j’ai l’honneur de débuter cette lecture avec la préface signée Rudy GOBERT)). 
                 Ce dernier explique ce qu’est pour lui la définition parfaite du « TrashTalk » version NBA.
                 </p>
-                <a href="#TrashTalk.php"> En voir plus...</a>
+                <a href="TrashTalk.php"> En voir plus...</a>
                 </div>
                 </div>
             </div>
