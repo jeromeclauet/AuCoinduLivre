@@ -49,6 +49,9 @@ nav li:hover {
     text-decoration: none;
     border-radius: 15px;
 }
+.acc {
+    margin-top: 50px;
+}
 /*Main index*/
 .main-index {
     background-image: url('../Assets/Image/calligraphy-998332.png');
@@ -96,7 +99,7 @@ footer li{
     list-style: none;
 }
 .img {
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 25px;
 }
 .footer-adress {
@@ -221,4 +224,31 @@ h2 {
 .bu {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.array {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.profil {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.main-connexion {
+    background-image: url('../Assets/Image/calligraphy-998332.png');
+    border-bottom:  1px solid grey;
+    border-top: 3px solid grey;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 20px;
 }
