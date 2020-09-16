@@ -1,12 +1,21 @@
+<?php 
+session_start();
+include '../models/books.php';
+include '../models/authors.php';
+include '../models/articles.php';
+include_once '../models/comments.php';
+include_once '../controllers/commentsCtrl.php';
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
     <head>
-        <title>Au coin du Livre</title>
+        <title>Au Coin du Livre</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale 1.0" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../Assets/style.css" type="text/css" />
+        <link rel="shorcut icon" type="image/logo" href="../Assets/Image/Logo 1.png" />
     </head>
 <body>
     <?php include '../php_page/Header.php' ?>
@@ -25,8 +34,7 @@
         </div>
         <div class="booktext col-lg-8 col_md_12">
             <p>
-            <h2>Un soir à Paris</h2>
-            <br>Il était une fois le cinéma Paradis…
+            <h2>Le Sourire des Femmes</h2>
             <br>Encore sous le coup du départ soudain de son compagnon, Aurélie remarque dans une librairie un roman intitulé Le sourire des femmes. La lecture passionnée de ce livre, où elle se reconnaît dans le personnage principal, la sauve du désespoir. Aussi décide-t-elle de remercier l'auteur en l'invitant au restaurant. Mais rencontrer l'écrivain par l'intermédiaire de son éditeur se révèle compliqué.
             Dès la première phrase du roman, l'intrigue est lancée. Aurélie est propriétaire d'un restaurant parisien. Elle découvre par hasard un roman qui va lui redonner goût à la vie.
             Elle s'aperçoit qu'elle ressemble étrangement à l'héroïne du roman. Décidée à percer le mystère, elle se met en tête de rencontrer l'auteur pour lui demander des explications. Elle s'adresse en premier lieu à l'éditeur français du livre, mais s'en suive de multiples quiproquos...
@@ -41,12 +49,37 @@
         </div>
     </div>
     <div> 
-        <h3 class="text-center">Commentaires :</h3>
-    <form method="POST">
-        <input type="text" name="pseudo" placeholder="Votre Pseudo"/></br></br>
-        <input type="textarea" size="150" name="commentaire" placeholder="Votre commentaire..."></textarea></br></br>
-        <input type="submit" class="btn btn-warning" value="Poster votre commentaire" name="submit_commentaire"/></br></br>
-    </form>
-    </div>
+    <div class="main-comment">
+        <div class="container">
+    <fieldset class="ti text-center">Espace Commentaire : </fieldset>    
+        <form action="#" method="POST">
+            <div class="text-center">
+                <label for="username">Pseudo :</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Votre Pseudo"/>
+                    <?php //formErrors qui affiche une erreur si le champ est mal rempli.
+            if (isset($formErrors['username'])) { ?>
+                <div class="text-danger"><?= $formErrors['username']?></div>
+                   <?php }else{ ?>
+                    <small id="username" class="form-text text-black">Merci de renseigner votre pseudo</small>
+            <?php } ?>
+                   </div>
+            <div class="text-center">
+                <label for="comment">Commentaire : </label>
+                    <input type="textarea" class="form-control" name="comment" id="comment" placeholder="Votre commentaire..."></textarea>
+                    <?php //formErrors qui affiche une erreur si le champ est mal rempli.
+            if (isset($formErrors['comment'])) { ?>
+                <div class="text-danger"><?= $formErrors['comment']?></div>
+                   <?php }else{ ?>
+                    <small id="comment" class="form-text text-black">Merci de renseigner votre commentaire</small>
+            <?php } ?>
+                   </div>
+                   <div class="bu text-center">
+                   <button class="btn btn-warning" type="submit" name="addComments">Ajouter votre commentaire</button>      
+                   </div>
+                </form>
+                   </div>
+                </div>
+            </div>
+        </div>
     </div>
     <?php include '../php_page/Footer.php' ?>

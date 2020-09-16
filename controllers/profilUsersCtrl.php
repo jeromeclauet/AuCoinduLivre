@@ -7,7 +7,7 @@ if(!empty($_GET['id'])){
         // $appointments->idPatients = $patient->id;
         // $appointmentList = $appointments->getAppointmentListById();
         $usersInfo = $user->getProfilUsers(); 
-    }else {
-        $message = 'Une erreur s\'est produite';
+     }else {
+         $message = 'Une erreur s\'est produite';
     }
-}
+    }

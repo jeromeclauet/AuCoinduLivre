@@ -1,6 +1,4 @@
 <?php
-//RegexPassword est de forcer l'utilisateur à mettre au minimum une majuscule, une minuscule et un chiffre pour un mot de passe de minimum de 8 caractères.
-$regexPassword = '%^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$%';
 $formErrors = array();
 //On vérifie le bouton du formulaire
 if (isset($_POST['addUsers'])) {

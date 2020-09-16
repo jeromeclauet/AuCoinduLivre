@@ -1,12 +1,18 @@
+<?php 
+session_start();
+include '../models/books.php';
+include '../models/articles.php';
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
     <head>
-        <title>Au coin du Livre</title>
+        <title>Au Coin du Livre</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale 1.0" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../Assets/style.css" type="text/css" />
+        <link rel="shorcut icon" type="image/logo" href="../Assets/Image/Logo 1.png" />
     </head>
 <body>
     <?php include '../php_page/Header.php' ?>
@@ -37,7 +43,7 @@
                 <br>Editer aux éditions de la Martinière, et écrit par Rabbin des Bois. Je ne vous caches pas que ce livre m’a attiré au départ car je démarre une formation dans le développement web et je voulais avoir l’expérience d’un codeur autodidacte.
                 <br>Nous commençons le livre avec une lettre écrite par Rabbin des Bois, qui nous ai directement adressé. Il ne nomme pas le lecteur mais l’implique dans la narration du texte en utilisant le tutoiement à l’excès. Il va même jusqu’à mettre une majuscule à chaque utilisation du tutoiement dans la lettre.
                 </p>
-                <a href="../Lève toi et code.php">En voir plus...</a>
+                <a href="../view/Lève toi et code.php">En voir plus...</a>
                 </div>
             </div>
             </div>

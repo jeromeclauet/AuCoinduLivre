@@ -25,5 +25,6 @@ include '../controllers/profilUsersCtrl.php';
     }else { ?>
     <p class="text-center"><?= $message ?></p><?php
     } ?>
+    </div>
 </div>
 <?php include '../php_page/Footer.php';?>

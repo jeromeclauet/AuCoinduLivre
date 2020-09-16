@@ -27,14 +27,19 @@
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Mon compte
-                </a>
+                </a> 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <?php if(!isset($_SESSION['profile'])){ //Si l'utilisateur n'est pas connecté ?>
+                <?php if(isset($_SESSION['profile']['role'])){ 
+                    if($_SESSION['profile']['role'] == '1'){ ?>
+                        <a class="dropdown-item" href="../view/dashboardIndex.php">Tableau de bord</a>
+                        <a class="dropdown-item" href="Accueil.php?action=disconnect">Déconnexion</a> 
+                    <?php }else{ ?>                        
+                    <a class="dropdown-item" href="Accueil.php?action=disconnect">Déconnexion</a>
+                    <?php } ?>
+                <?php }else{ ?>                
                     <a class="dropdown-item" href="Login.php?view=login">Connexion</a>
-                    <a class="dropdown-item" href="Register.php?view=register">Inscription</a> 
-                <?php }else{ //Si la personne est connectée?>
-                    <a class="dropdown-item" href="Accueil.php?action=disconnect">Déconnexion</a> 
-            <?php } ?>         
+                    <a class="dropdown-item" href="Register.php?view=register">Inscription</a>
+            <?php } ?>    
             </div>
                 </li>      
             </ul>

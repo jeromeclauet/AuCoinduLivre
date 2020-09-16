@@ -28,6 +28,7 @@ if(isset($_POST['login'])){
             //On met en session ses informations
             $_SESSION['profile']['id'] = $userProfil->id;
             $_SESSION['profile']['username'] = $userProfil->username;
+            $_SESSION['profile']['role'] = $userProfil->role;
             //On redirige vers une autre page.
             header('location:Accueil.php');
             exit();
