@@ -34,6 +34,7 @@
                         <a class="dropdown-item" href="../view/dashboardIndex.php">Tableau de bord</a>
                         <a class="dropdown-item" href="Accueil.php?action=disconnect">Déconnexion</a> 
                     <?php }else{ ?>                        
+                    <a class="dropdown-item" href="Accueil.php?action=disconnect">Profil</a>
                     <a class="dropdown-item" href="Accueil.php?action=disconnect">Déconnexion</a>
                     <?php } ?>
                 <?php }else{ ?>                

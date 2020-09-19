@@ -1,4 +1,8 @@
 <?php
+//la  class est la définition de l'objet.
+// private : accessible uniquement dans la class.
+// protected : accessible dans la class et les enfants.
+// public : dispo dans class enfant et dans les instances. 
 class users {
     public $id = 0;
     public $username = '';
@@ -57,10 +61,14 @@ class users {
     }
     //Méthode permettant d'afficher la liste complète des utilisateurs.
         public function getUsersList() {
-            $getUsersListQuery = $this->db->query(
-                'SELECT `id`, `username`, `mail`
+            $getUsersListQuery = $this->db->prepare(
+                'SELECT `id`, `username`, `mail`, `id_m3u0l_usersRoles`
                 FROM `m3u0l_users`
                 ORDER BY `username`');
+            $getUsersListQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+            $getUsersListQuery->bindValue(':username', $this->username, PDO::PARAM_STR);
+            $getUsersListQuery->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+            $getUsersListQuery->execute();
             return $getUsersListQuery->fetchAll(PDO::FETCH_OBJ);
         }
     //Méthode permettant d'afficher le profil d'un utilisateur via son id.
@@ -89,7 +97,7 @@ class users {
     //Méthode permettant d'afficher la page profil utilisateur en récupérant l'id.
     public function getProfilUsers() {
         $getProfilUsersQuery = $this->db->prepare(
-            'SELECT `username`, `mail`
+            'SELECT `id`,`username`, `mail`
             FROM `m3u0l_users`
             WHERE `id` = :id'
         );
@@ -126,26 +134,25 @@ public function getUserProfile(){
 }
 //Méthode permettant de modifier le profil d'un utilisateur
 public function modifyUserProfile(){
-    $modifyUserProfile = $this->db->prepare(
+    $modifyUsers = $this->db->prepare(
         'UPDATE `m3u0l_users`
         SET `username` = :username,
         `mail` = :mail,
-        `password` = :password
+        `password` = $this->password
         WHERE `id` = :id'
     );
-    $modifyUserProfile->bindValue(':id', $this->id, PDO::PARAM_INT);
-    $modifyUserProfile->bindValue(':username', $this->username, PDO::PARAM_STR);
-    $modifyUserProfile->bindValue(':mail', $this->mail, PDO::PARAM_STR);
-    $modifyUserProfile->bindValue(':password', $this->password, PDO::PARAM_STR);
-    return $modifyUserProfile->execute();
+    $modifyUsers->bindValue(':username', $this->username, PDO::PARAM_STR);
+    $modifyUsers->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+    $modifyUsers->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return $modifyUsers->execute();
 }
 //Méthode permettant de supprimer le profil d'un utilisateur
 public function deleteProfile(){
-    $deleteProfile = $this->db->prepare(
+    $deleteUsers = $this->db->prepare(
         'DELETE FROM `m3u0l_users`
         WHERE `id` = :id'
     );
-    $deleteProfile->bindValue(':id', $this->id, PDO::PARAM_INT);
-    return $deleteProfile->execute();
+    $deleteUsers->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return $deleteUsers->execute();
 }
 }

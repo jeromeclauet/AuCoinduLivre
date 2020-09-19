@@ -98,10 +98,10 @@ footer {
 footer li{
     list-style: none;
 }
-.img {
-    margin-left: 50px;
-    margin-top: 25px;
-}
+/* .imgResize{
+    width: 100px;
+    height: 100px;
+}  */
 .footer-adress {
     color: #FFF;
     text-align: center;

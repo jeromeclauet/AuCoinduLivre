@@ -2,7 +2,7 @@
 session_start();
 include_once '../config.php';
 include '../models/Users.php';
-include '../controllers/listeUsersCtrl.php';
+include '../controllers/modifyUsersCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -68,25 +68,39 @@ include '../controllers/listeUsersCtrl.php';
             </ul>
         </div>
     </nav>
-<body>
-    <div class="array">
-        <h3 class="ti text-center">Liste des utilisateurs</h3>
-    <table class="table table-striped text-center container">
-       <tr>
-           <td scope="col">Pseudo :</td>
-           <td scope="col">Adresse mail :</td>
-           <td scope="col">Role :</td>
-           <td scope="col">Lien :</td>
-       </tr>
-   <?php 
-    foreach($usersList as $usersDetails){ ?>
-       <tr>
-           <td><?= $usersDetails->username ?></td>
-           <td><?= $usersDetails->mail ?></td>
-           <td><?= $usersDetails->id_m3u0l_usersRoles ?></td>
-           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/profilUsers.php?content=../view/listeUsers&id=<?= $usersDetails->id ?>">Voir le profil</a></button></td>
-       </tr><?php
-    } ?>
-</table>
+    <body>
+    <div class="main-inscription">
+        <div class="container">
+    <fieldset class="ti text-center">Formulaire de modification</fieldset>  
+    <form action="" method="POST">
+            <div class="text-center">
+            <label for="username">Pseudo :</label>
+            <input type="text" class="form-control" id="username" name="username"/>
+            <?php //formErrors qui affiche une erreur si le champ est mal rempli.
+            if (isset($formErrors['username'])) { ?>
+                <div class="text-danger"><?= $formErrors['username']?></div>
+                   <?php }else{ ?>
+                    <small id="username" class="form-text text-black">Merci de renseigner votre pseudo</small>
+            <?php } ?>
+                   </div>
+            <div class="text-center">
+                <label for="mail">Adresse Mail :</label>
+                <input type="email" class="form-control" id="mail" name="mail"/>
+            <?php if (isset($formErrors['mail'])) { ?>
+                <div class="text-danger"><?= $formErrors['mail']?></div>
+                    <?php }else{ ?>
+                    <small id="mail" class="form-text text-black">Merci de renseigner votre adresse mail</small>
+            <?php } ?>
+                    </div>
+        <div class="bu text-center">
+            <button class="btn btn-warning" type="submit" name="modify">Modifier le profil</button>      
+        </div>
+    </form>
+        <!-- TERNAIRE qui permet d'afficher en haut de la page, si le formulaire a été accepté ou non. -->
+        <p class="text-center"><?= isset($modifyUserMessage) ? $modifyUserMessage : '' ?></p>
+            </div>
+        </div>
+    </div>
 </div>
+</main>
 <?php include '../php_page/Footer.php' ?>

@@ -1,9 +1,9 @@
 <footer class="container-fluid">
     <div class="row">
-        <div class="col-5 col-md-4">
-            <img class="img" src="../Assets/Image/Logo 1.png" alt="logo">
+        <div class="col-3 col-md-3 footer-adress">
+            <img class="imgResize" src="../Assets/Image/Logo 1.png" alt="logo">
         </div>
-        <div class="col-5 col-md-4 footer-adress">
+        <div class="col-4 col-md-6 footer-adress">
             <h3 class="text-center">Au Coin du Livre</h3>
             <ul>
                 <li><a href="Politique de confidentialité.html" style="color: rgb(167, 167, 24);">Politique de confidentialité </a></li>
@@ -12,7 +12,7 @@
                 <li><a href="Contact" style="color: rgb(167, 167, 24);">Contact</a></li>
             </ul>
         </div>
-        <div class="col-5 col-md-4 footer-adress">
+        <div class="col-2 col-md-2 footer-adress">
             <div class="row">
                 <h3>Réseaux Sociaux</h3>
             </div>
