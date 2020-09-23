@@ -1,8 +1,8 @@
-<?php
+<?php 
 session_start();
 include_once '../config.php';
-include '../models/roles.php';
-include '../controllers/accueilCtrl.php';
+include '../models/authors.php';
+include_once '../controllers/listAuthorsCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -70,16 +70,22 @@ include '../controllers/accueilCtrl.php';
         </div>
     </nav>
 <body>
-<div class="main-index">
-        <div class="container">
-    <div class="acc">
-            <?= isset($_SESSION['profile']['username']) ? 'Salut à toi, jeune entrepreneur ! ': ''?> </br></br>
-            <ul>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listUsers.php">Liste des utilisateurs</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listComments.php">Liste des commentaires</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listArticles.php">Liste des articles</a></button></ol>
-            </ul>
-    </div>
-    </div>
-    </div>
-    <?php include '../php_page/Footer.php' ?>
+    <div class="array">
+        <h3 class="ti text-center">Liste des auteurs</h3>
+    <table class="table table-striped text-center container">
+       <tr>
+           <td scope="col">Nom(s) de(s) l'auteur(s) :</td>
+           <td scope="col">Prénom(s) de(s) l'auteur(s) :</td>
+           <td scope="col">Lien :</td>
+       </tr>
+   <?php 
+    foreach($authorsList as $authorsDetails){ ?>
+       <tr>
+           <td><?= $authorsDetails->lastNameAuthor ?></td>
+           <td><?= $authorsDetails->firstNameAuthor ?></td>
+           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/authors.php?content=../view/listAuhtors&id=<?= $authorsDetails->id ?>">Voir l'auteur</a></button></td>
+       </tr><?php
+    } ?>
+</table>
+</div>
+<?php include '../php_page/Footer.php' ?>

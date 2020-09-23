@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once '../config.php';
-include '../models/roles.php';
-include '../controllers/accueilCtrl.php';
+include '../models/books.php';
+include '../controllers/listBooksCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -70,16 +70,31 @@ include '../controllers/accueilCtrl.php';
         </div>
     </nav>
 <body>
-<div class="main-index">
-        <div class="container">
-    <div class="acc">
-            <?= isset($_SESSION['profile']['username']) ? 'Salut à toi, jeune entrepreneur ! ': ''?> </br></br>
-            <ul>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listUsers.php">Liste des utilisateurs</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listComments.php">Liste des commentaires</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listArticles.php">Liste des articles</a></button></ol>
-            </ul>
-    </div>
-    </div>
-    </div>
-    <?php include '../php_page/Footer.php' ?>
+<div class="array">
+        <h3 class="ti text-center">Liste des livres</h3>
+        <div class="but">
+        <button type="button" class="btn btn-warning" href="../view/addBook.php">Ajouter un livre</button>
+        </div>
+    <table class="table table-striped text-center container">
+       <tr>
+           <td scope="col">Titre :</td>
+           <td scope="col">Date de sortie :</td>
+           <td scope="col">Nombre de pages :</td>
+           <td scope="col">Editeur :</td>
+           <td scope="col">Collection :</td>
+           <td scope="col">Lien :</td>
+       </tr>
+   <?php 
+    foreach($bookList as $bookDetails){ ?>
+       <tr>
+           <td><?= $bookDetails->title ?></td>
+           <td><?= $bookDetails->releasedate ?></td>
+           <td><?= $bookDetails->pagenumber ?></td>
+           <td><?= $bookDetails->editor ?></td>
+           <td><?= $bookDetails->collection ?></td>
+           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/book.php?content=../view/listBooks&id=<?= $bookDetails->id ?>">Voir le livre</a></button></td>
+       </tr><?php
+    } ?>
+</table>
+</div>
+<?php include '../php_page/Footer.php' ?>

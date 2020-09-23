@@ -27,11 +27,11 @@ public function getAuthor (){
     $getAuthor = $this->db->prepare(
         'SELECT `id`, `lastNameAuthor`, `firstNameAuthor`
         FROM `m3u0l_authors`
-        ORDER BY `id`
+        ORDER BY `lastNameAuthor` ASC
         ');
-    $getComment->bindValue(':id', $this->id, PDO::PARAM_INT);
-    $getComment->execute();
-    return $getComment->fetchAll(PDO::FETCH_OBJ);
+    $getAuthor->bindValue(':id', $this->id, PDO::PARAM_INT);
+    $getAuthor->execute();
+    return $getAuthor->fetchAll(PDO::FETCH_OBJ);
 }
 //Méthode permettant de modifier un auteur via son id
 public function modifyAuthor(){

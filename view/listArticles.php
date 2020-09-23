@@ -1,8 +1,8 @@
 <?php 
 session_start();
 include_once '../config.php';
-include '../models/Users.php';
-include '../controllers/listeUsersCtrl.php';
+include '../models/articles.php';
+include '../controllers/listArticlesCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -30,22 +30,23 @@ include '../controllers/listeUsersCtrl.php';
                     <a class="nav-link text-white" href="../view/dashboardIndex.php">Tableau de bord<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/articles.php">Articles</a>
+                    <a class="nav-link text-white" href="../view/listArticles.php">Articles</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Livres/Genres
+                    Livres
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../view/livres.php">Livres</a>
-                    <a class="dropdown-item" href="../view/genres.php">Genres</a>
+                    <a class="dropdown-item" href="../view/listBooks.php">Livres</a>
+                    <a class="dropdown-item" href="../view/listGenders.php">Genres</a>
+                    <a class="dropdown-item" href="../view/listAuthors.php">Auteurs</a>
                 </div>
                 </li>  
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/listeUsers.php">Utilisateurs</a>
+                    <a class="nav-link text-white" href="../view/listUsers.php">Utilisateurs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/commentaires.php">Commentaires</a>
+                    <a class="nav-link text-white" href="../view/listComments.php">Commentaires</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,21 +71,20 @@ include '../controllers/listeUsersCtrl.php';
     </nav>
 <body>
     <div class="array">
-        <h3 class="ti text-center">Liste des utilisateurs</h3>
+        <h3 class="ti text-center">Liste des articles</h3>
     <table class="table table-striped text-center container">
        <tr>
-           <td scope="col">Pseudo :</td>
-           <td scope="col">Adresse mail :</td>
-           <td scope="col">Role :</td>
-           <td scope="col">Lien :</td>
+           <td scope="col">Titre :</td>
+           <td scope="col">Contenu :</td>
+           <td scope="col">Modifier :</td>
+           <td scope="col">Supprimer :</td>
        </tr>
-   <?php 
-    foreach($usersList as $usersDetails){ ?>
+       <?php 
+    foreach($articlesList as $articlesDetails){ ?>
        <tr>
-           <td><?= $usersDetails->username ?></td>
-           <td><?= $usersDetails->mail ?></td>
-           <td><?= $usersDetails->id_m3u0l_usersRoles ?></td>
-           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/profilUsers.php?content=../view/listeUsers&id=<?= $usersDetails->id ?>">Voir le profil</a></button></td>
+           <td><?= $articlesDetails->name ?></td>
+           <td><?= $articlesDetails->content ?></td>
+           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/articles.php?content=../view/listArticles&id=<?= $articlesDetails->id ?>">Voir le contenu</a></button></td>
        </tr><?php
     } ?>
 </table>

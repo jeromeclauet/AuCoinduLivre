@@ -30,22 +30,23 @@ include '../controllers/profilUsersCtrl.php';
                     <a class="nav-link text-white" href="../view/dashboardIndex.php">Tableau de bord<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/articles.php">Articles</a>
+                    <a class="nav-link text-white" href="../view/listArticles.php">Articles</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Livres/Genres
+                    Livres
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../view/livres.php">Livres</a>
-                    <a class="dropdown-item" href="../view/genres.php">Genres</a>
+                    <a class="dropdown-item" href="../view/listBooks.php">Livres</a>
+                    <a class="dropdown-item" href="../view/listGenders.php">Genres</a>
+                    <a class="dropdown-item" href="../view/listAuthors.php">Auteurs</a>
                 </div>
                 </li>  
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/listeUsers.php">Utilisateurs</a>
+                    <a class="nav-link text-white" href="../view/listUsers.php">Utilisateurs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/commentaires.php">Commentaires</a>
+                    <a class="nav-link text-white" href="../view/listComments.php">Commentaires</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,18 +65,43 @@ include '../controllers/profilUsersCtrl.php';
                     <a class="dropdown-item" href="Register.php?view=register">Inscription</a>
             <?php } ?>    
             </div>
-                </li>      
+                </li>    
             </ul>
         </div>
     </nav>
 <body>
 <div class="profil">
-    <form action="../view/modifyUsers.php" method="POST">
+     <form action="" method="POST">
     <h3 class="ti text-center">Profil utilisateur</h3>
-        <p class="text-center">Pseudo :<?= $usersInfo->username ?></p>
-        <p class="text-center">Adresse mail : <?= $usersInfo->mail ?></p>
+        <p class="text-center">Pseudo :<?= $usersInfos->username ?></p>
+        <p class="text-center">Adresse mail : <?= $usersInfos->mail ?></p>
     <div class="text-center">
-        <button type="submit" name="beginModify" value="<?= $usersInfo->id ?>" class="btn btn-warning">Modifier l'utilisateur</button> 
+    <a class="btn btn-warning" href="modifyUsers.php?id=<?= $_GET['id']?>">Modifier l'utilisateur</a>
     </div>
+    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="<? $usersInfo->id ?>">Supprimer</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmez vous la suppression ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form method="POST" action="">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label"></label>
+                            <input type="hidden" class="form-control" name="recipient-name" value="">
+                        </div>
+                        <div class="text-center">
+                        <input type="submit" name="deleteUsers" value="Supprimer" class="btn btn-danger" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        </div>
+                        </form>
+                    </div>
                 </div>
-<?php include '../php_page/Footer.php';?>
+            </div>
+        </div>
+    </div>
+    <?php include '../php_page/Footer.php';?>

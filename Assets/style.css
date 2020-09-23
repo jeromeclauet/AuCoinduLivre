@@ -16,7 +16,7 @@
     padding: 0;
 }
 body {  
-    width: 100%;  
+    width: 108%;  
     background-image: url('../Assets/Image/etagere-de-livres-anciens.jpg');
     font-family: 'Acme-regular';
 }
@@ -147,7 +147,7 @@ h4 {
     text-align: center;
 }
 .postDate{
-    margin-left: 500px;
+    margin-left: 300px;
     text-decoration: underline;
     font-size: 17px;
 }
@@ -266,4 +266,7 @@ h2 {
     margin-bottom: 20px;
     font-size: 30px;
     text-decoration: underline;
+}
+.but {
+    margin-bottom: 90px;
 }

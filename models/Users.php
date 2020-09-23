@@ -133,18 +133,27 @@ public function getUserProfile(){
     return $getUserProfile->fetch(PDO::FETCH_OBJ);
 }
 //Méthode permettant de modifier le profil d'un utilisateur
-public function modifyUserProfile(){
+public function modifyUsernameProfile(){
+    // Faire une requête PREPARE et EXECUTE et bindValue protége de l'injection SQL
     $modifyUsers = $this->db->prepare(
         'UPDATE `m3u0l_users`
-        SET `username` = :username,
-        `mail` = :mail,
-        `password` = $this->password
+        SET `username` = :username
         WHERE `id` = :id'
     );
     $modifyUsers->bindValue(':username', $this->username, PDO::PARAM_STR);
-    $modifyUsers->bindValue(':mail', $this->mail, PDO::PARAM_STR);
     $modifyUsers->bindValue(':id', $this->id, PDO::PARAM_INT);
     return $modifyUsers->execute();
+}
+//Méthode permettant de modifier le profil d'un utilisateur
+public function modifyUserMail(){
+    $modifyUserMail = $this->db->prepare(
+        'UPDATE `m3u0l_users`
+        SET `mail` = :mail
+        WHERE `id` = :id'
+    );
+    $modifyUserMail->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+    $modifyUserMail->bindValue(':id', $this->id, PDO::PARAM_INT);
+    return $modifyUserMail->execute();
 }
 //Méthode permettant de supprimer le profil d'un utilisateur
 public function deleteProfile(){

@@ -1,8 +1,8 @@
-<?php
+<?php 
 session_start();
 include_once '../config.php';
-include '../models/roles.php';
-include '../controllers/accueilCtrl.php';
+include '../models/comments.php';
+include '../controllers/listCommentsCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -34,14 +34,14 @@ include '../controllers/accueilCtrl.php';
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Livres
+                    Livres/Genres
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../view/listBooks.php">Livres</a>
                     <a class="dropdown-item" href="../view/listGenders.php">Genres</a>
-                    <a class="dropdown-item" href="../view/listAuthors.php">Auteurs</a>
+                    <a class="dropdown-item" href="..view/listAuthors.php">Auteurs</a>
                 </div>
-                </li>  
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="../view/listUsers.php">Utilisateurs</a>
                 </li>
@@ -70,16 +70,24 @@ include '../controllers/accueilCtrl.php';
         </div>
     </nav>
 <body>
-<div class="main-index">
-        <div class="container">
-    <div class="acc">
-            <?= isset($_SESSION['profile']['username']) ? 'Salut à toi, jeune entrepreneur ! ': ''?> </br></br>
-            <ul>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listUsers.php">Liste des utilisateurs</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listComments.php">Liste des commentaires</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listArticles.php">Liste des articles</a></button></ol>
-            </ul>
-    </div>
-    </div>
-    </div>
-    <?php include '../php_page/Footer.php' ?>
+    <div class="array">
+        <h3 class="ti text-center">Liste des commentaires</h3>
+    <table class="table table-striped text-center container">
+       <tr>
+           <td scope="col">Commentaires :</td>
+           <td scope="col">Date :</td>
+           <td scope="col">Id Utilisateur :</td>
+           <td scope="col">Lien :</td>
+       </tr>
+   <?php 
+    foreach($commentsList as $commentsDetails){ ?>
+       <tr>
+           <td><?= $commentsDetails->comments ?></td>
+           <td><?= $commentsDetails->date ?></td>
+           <td><?= $commentsDetails->id_m3u0l_users ?></td>
+           <td><button type="button" class="btn btn-warning"><a class="text-white" href="../view/comments.php?content=../view/listComments&id=<?= $commentsDetails->id ?>">Voir le profil</a></button></td>
+       </tr><?php
+    } ?>
+</table>
+</div>
+<?php include '../php_page/Footer.php' ?>

@@ -30,22 +30,23 @@ include '../controllers/modifyUsersCtrl.php';
                     <a class="nav-link text-white" href="../view/dashboardIndex.php">Tableau de bord<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/articles.php">Articles</a>
+                    <a class="nav-link text-white" href="../view/listArticles.php">Articles</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Livres/Genres
+                    Livres
                     </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../view/livres.php">Livres</a>
-                    <a class="dropdown-item" href="../view/genres.php">Genres</a>
+                    <a class="dropdown-item" href="../view/listBooks.php">Livres</a>
+                    <a class="dropdown-item" href="../view/listGenders.php">Genres</a>
+                    <a class="dropdown-iten" href="../view/listAuthors.php">Auteurs</a>
                 </div>
                 </li>  
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/listeUsers.php">Utilisateurs</a>
+                    <a class="nav-link text-white" href="../view/listUsers.php">Utilisateurs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="../view/commentaires.php">Commentaires</a>
+                    <a class="nav-link text-white" href="../view/listComments.php">Commentaires</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -83,6 +84,11 @@ include '../controllers/modifyUsersCtrl.php';
                     <small id="username" class="form-text text-black">Merci de renseigner votre pseudo</small>
             <?php } ?>
                    </div>
+                   <div class="bu text-center">
+            <button class="btn btn-warning" type="submit" name="modify">Modifier le pseudo</button>      
+        </div>
+    </form>
+    <form method="POST">
             <div class="text-center">
                 <label for="mail">Adresse Mail :</label>
                 <input type="email" class="form-control" id="mail" name="mail"/>
@@ -93,7 +99,7 @@ include '../controllers/modifyUsersCtrl.php';
             <?php } ?>
                     </div>
         <div class="bu text-center">
-            <button class="btn btn-warning" type="submit" name="modify">Modifier le profil</button>      
+            <button class="btn btn-warning" type="submit" name="modifyMail">Modifier l'adresse mail</button>      
         </div>
     </form>
         <!-- TERNAIRE qui permet d'afficher en haut de la page, si le formulaire a été accepté ou non. -->

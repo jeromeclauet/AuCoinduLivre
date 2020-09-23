@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once '../config.php';
-include '../models/roles.php';
-include '../controllers/accueilCtrl.php';
+include '../models/genders.php';
+include '../controllers/listGendersCtrl.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -70,16 +70,18 @@ include '../controllers/accueilCtrl.php';
         </div>
     </nav>
 <body>
-<div class="main-index">
-        <div class="container">
-    <div class="acc">
-            <?= isset($_SESSION['profile']['username']) ? 'Salut à toi, jeune entrepreneur ! ': ''?> </br></br>
-            <ul>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listUsers.php">Liste des utilisateurs</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listComments.php">Liste des commentaires</a></button></ol>
-            <ol><button type="button" class="btn btn-warning"><a class="text-white" href="../view/listArticles.php">Liste des articles</a></button></ol>
-            </ul>
-    </div>
-    </div>
-    </div>
-    <?php include '../php_page/Footer.php' ?>
+<div class="array">
+        <h3 class="ti text-center">Liste des genres</h3>
+    <table class="table table-striped text-center container">
+       <tr>
+           <td scope="col">Genre :</td>
+       </tr>
+   <?php 
+    foreach($genderList as $genderDetails){ ?>
+       <tr>
+           <td><?= $genderDetails->name ?></td>
+       </tr><?php
+    } ?>
+</table>
+</div>
+<?php include '../php_page/Footer.php' ?>
