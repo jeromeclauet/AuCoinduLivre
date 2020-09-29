@@ -35,7 +35,7 @@ include_once '../controllers/commentsCtrl.php';
         <div class="booktext col-lg-8 col_md_12">
             <p>
             <h2>Les Pourquoi de l'Histoire 4</h2>
-            <br>Voici le deuxième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
+            <br>Voici le quatrième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
             Toujours écrit par Stéphane Bern, ce quatrième et dernier volume des pourquoi de l’Histoire garde la même recette qui pour moi a fait le succès des trois premiers volumes, c’est-à-dire expliquer au lecteur en une voire deux pages la réponse à une question donnée.
             Comme par exemple, pourquoi le drapeau américain est-il composé de 13 bandes horizontales ou pourquoi Anne de Bretagne a-t-elle été couronnée deux fois reine de France? Comme d’habitude, la réponse se trouve à l’intérieur du livre.
             Je fais le même constat que pour les autres tomes, je ne suis toujours pas fan de l’Histoire de manière générale mais je dois dire que la construction du livre permet de ne pas décrocher et pouvoir passer à une autre histoire rapidement.

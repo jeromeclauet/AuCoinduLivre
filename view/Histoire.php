@@ -55,7 +55,7 @@ include '../models/articles.php';
                 <div class="booktext col-lg-8 col_md_12">
                 <h2>Les pourquoi de l'Histoire 3</h2>
                 <p>
-                <br>Voici le deuxième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
+                <br>Voici le troisième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
                 <br>Toujours écrit par Stéphane Bern, ce troisième volume des pourquoi de l’Histoire garde la même recette qui pour moi a fait le succès du premier et du deuxième volume, c’est-à-dire expliquer au lecteur en une voire deux pages la réponse à une question donnée.
                 </p>
                 <a href="../view/Les Pourquoi de l'Histoire 3.php">En voir plus...</a>
@@ -70,7 +70,7 @@ include '../models/articles.php';
                 <div class="booktext col-lg-8 col_md_12">
                 <h2>Les pourquoi de l'Histoire 4</h2>
                 <p>
-                <br>Voici le deuxième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
+                <br>Voici le quatrième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
                 <br>Toujours écrit par Stéphane Bern, ce quatrième et dernier volume des pourquoi de l’Histoire garde la même recette qui pour moi a fait le succès des trois premiers volumes, c’est-à-dire expliquer au lecteur en une voire deux pages la réponse à une question donnée.
                 </p>
                 <a href="../view/Les Pourquoi de l'Histoire 4.php">En voir plus...</a>

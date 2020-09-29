@@ -35,7 +35,7 @@ include_once '../controllers/commentsCtrl.php';
         <div class="booktext col-lg-8 col_md_12">
             <p>
             <h2>Les Pourquoi de l'Histoire 3</h2>
-            <br>Voici le deuxième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
+            <br>Voici le troisième résumé de la série de livre des pourquoi de l’Histoire, encore imprimé aux éditions Albin Michel.
             Toujours écrit par Stéphane Bern, ce troisième volume des pourquoi de l’Histoire garde la même recette qui pour moi a fait le succès du premier et du deuxième volume, c’est-à-dire expliquer au lecteur en une voire deux pages la réponse à une question donnée.
             Comme par exemple, pourquoi Rio de Janeiro a-t-elle été durant 13 ans la capitale du Portugal ou encore pourquoi la naissance de Louis XIV a-t-elle été consacré comme un jour férié ?  Comme d’habitude, la réponse se trouve à l’intérieur du livre.
             Je fais le même constat que pour le premier tome et deuxième tome , je ne suis toujours pas fan de l’Histoire de manière générale mais je dois dire que la construction du livre permet de ne pas décrocher et pouvoir passer à une autre histoire rapidement.
